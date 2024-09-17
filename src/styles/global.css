@@ -1,0 +1,117 @@
+html {
+    background-color: #f1f5f9;
+    font-family: sans-serif;
+}
+
+html.dark {
+    background-color: #0d0950;
+    color: #fff;
+}
+
+.dark .nav-links a {
+    color: #fff;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    line-height: 1.5;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+/* nav styles */
+
+.hamburger {
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+}
+
+.brand-header {
+    text-decoration: none;
+    color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    display: none;
+    margin: 0;
+    /* max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out; */
+}
+
+.nav-links a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    border-bottom: 1px solid gray;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+    background-color: #ff9776;
+}
+
+.expanded {
+    display: unset;
+    /* max-height: unset; */
+}
+
+@media screen and (min-width: 769px) {
+    h1 {
+        font-size: 2rem;;
+    }
+
+    nav {
+        flex-flow: row nowrap;
+        padding: 0 5rem;
+    }
+
+    .nav-links {
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        padding: 15px 20px;
+        border-bottom: none;
+    }
+
+    .hamburger {
+        display: none;
+    }
+}

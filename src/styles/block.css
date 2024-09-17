@@ -1,0 +1,40 @@
+.block {
+    max-width: 200px;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 2rem auto;
+}
+
+@media screen and (min-width: 769px) {
+    .block-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+    }
+
+    .block {
+        margin: 2%;
+    }
+
+    .block:hover {
+        animation-name: spin;
+        animation-duration: 400ms;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

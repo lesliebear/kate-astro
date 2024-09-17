@@ -1,0 +1,20 @@
+---
+import Navigation from "./Navigation.astro";
+import NavigationMin from "./NavigationMin.astro";
+import Hamburger from "./Hamburger.astro";
+import BrandHeader from "./BrandHeader.astro";
+
+const {isMinNav} = Astro.props;
+---
+
+<header>
+    <nav>
+        <BrandHeader />
+        <Hamburger />
+        {isMinNav ? <NavigationMin/> : <Navigation/>}
+    </nav>
+</header>
+
+<script>
+    import "../../scripts/menu.js";
+</script>
