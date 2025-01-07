@@ -3,4 +3,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout isMinNav={false}>
+    <div class="photo-container">
+        <img src="/about-photo.jpeg" />
+    </div>
+    <div class="about-container">
+        <p class="description">
+            I am a New York based director, producer and editor who works with major
+            networks, moderately famous comedians and independent musicians. I
+            volunteer in ways you could call <a href="https://gothamist.com/news/after-city-relocates-covid-vaccine-hub-bushwick-neighbors-step-ease-confusion" target="_blank"><b><em>community organizing</em></b></a>. You can pay me to
+            make videos, consult on post or live tech, develop #relatable #content,
+            staff up your production, or not pay me to run advocacy trainings, pet
+            your horse, do mindless crafts, fall into deep internet holes.
+        </p>
+    </div>
 </BaseLayout>
+
+<style>
+    .photo-container {
+        width: 40%;
+        margin: 3rem 0;
+        margin-left: 7rem;
+    }
+
+    .photo-container img {
+        width: 100%;
+    }
+
+    .about-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 5rem;
+        line-height: 2.5rem;
+    }
+
+    .description {
+       width: 50%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .photo-container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .about-container {
+            width: 80%;
+            display: block;
+            margin: auto;
+            line-height: 2rem;
+        }
+
+        .description {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .photo-container, .about-container {
+            width: 90%;
+        }
+    }
+</style>

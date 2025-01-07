@@ -1,0 +1,53 @@
+.video-container {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0;
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+}
+
+.caption {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.video {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.video .title {
+    font-size: 1rem;
+    /* margin-bottom: .5rem; */
+}
+
+.video .role {
+    font-size: 1rem;
+    /* margin-top: 1rem; */
+}
+
+.title, .role {
+    margin: .5rem 0;
+}
+
+.video-wrapper, .player{
+	width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+    .thumbnail {
+        width: 33.333333%;
+        padding: 0.5rem 0.2rem;
+    }
+}

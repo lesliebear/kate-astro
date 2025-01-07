@@ -30,6 +30,11 @@ h1 {
     font-size: 1.5rem;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* nav styles */
 
 .hamburger {
@@ -76,11 +81,11 @@ nav {
     font-size: 1.2rem;
     color: black;
     border-bottom: 1px solid gray;
+    transition: background-color .15s ease-in-out;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-    background-color: #ff9776;
+.nav-links a:hover{
+    background-color: #6BFFF6;
 }
 
 .expanded {
@@ -95,7 +100,7 @@ nav {
 
     nav {
         flex-flow: row nowrap;
-        padding: 0 5rem;
+        padding: 0;
     }
 
     .nav-links {

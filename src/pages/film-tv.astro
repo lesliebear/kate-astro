@@ -1,6 +1,48 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import VideoContainer from "../components/Video/VideoContainer"
+
+const videoList = [
+        {
+            title: 'Screaming Females Do Alaska',
+            imgSrc: 'SFALASKA.png'
+        },
+        {
+            title: 'CHRIS GETHARD HALF MY LIFE',
+            imgSrc: "ChrisGethard_HalfMyLife.jpg",
+        },
+        {
+            title: 'CHRIS GETHARD PRESENTS',
+            imgSrc: 'CGP_TEXT.png'
+        },
+        {
+            title: 'THE CHRIS GETHARD SHOW',
+            imgSrc: 'TCGS_TEXT.jpg'
+        },
+        {
+            title: 'MTV',
+            imgSrc: 'MTV_IN_GENERAL.png'
+        },
+        {
+            title: 'MTV12',
+            imgSrc: 'MTV12.png'
+        },
+        {
+            title: 'BANANAZZZ',
+            imgSrc: 'BANANAZZZ.png'
+        },
+        {
+            title: 'THE SPECIAL',
+            imgSrc: 'THESPECIAL.jpg'
+        },
+        {
+            title: 'Kiki Haus of Us - Gamification Ball',
+            imgSrc: 'KIKI_TEXT.png'
+        }
+    ];
 ---
 
 <BaseLayout isMinNav={false}>
+    <VideoContainer videoList={videoList} imgPath="/thumbnails/" showTitle={false}
+    />
 </BaseLayout>

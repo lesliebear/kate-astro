@@ -30,11 +30,14 @@
     }
 
     @keyframes spin {
-        from {
+        0% {
             transform: rotate(0deg);
         }
-        to {
-            transform: rotate(360deg);
+        50% {
+            transform: rotate(40deg);
+        }
+        100% {
+            transform: rotate(0deg);
         }
     }
 }
