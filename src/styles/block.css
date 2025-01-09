@@ -43,23 +43,4 @@
     .block {
         margin: 2%;
     }
-
-    /* .block:hover {
-        animation-name: spin;
-        animation-duration: 400ms;
-        animation-iteration-count: 1;
-        animation-timing-function: ease-in-out;
-    }
-
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(40deg);
-        }
-        100% {
-            transform: rotate(0deg);
-        }
-    } */
 }
