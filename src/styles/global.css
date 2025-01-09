@@ -51,7 +51,7 @@ body {
 
 h1 {
     margin: 1rem 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'ZTTalk-Bold', sans-serif;
 }
 
@@ -152,5 +152,9 @@ nav {
     nav {
         padding: 0;
         ;
+    }
+
+    .brand-header {
+        margin-left: 1rem;
     }
 }
