@@ -1,5 +1,6 @@
 import '../../styles/video.css';
-import { useState, useEffect } from "preact/hooks";
+import BackButton from '../BackButton';
+import { useEffect } from "preact/hooks";
 
 export default function Video({ vidIDs, vidID, title, role="Director", isList = false }) {
     const initPlayer = () => {
@@ -64,6 +65,7 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
 
     return (
         <div class="video-container">
+            <BackButton />
             {isList && (
                 <>
                     <p class="title">{title}</p>

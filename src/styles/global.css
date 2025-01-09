@@ -66,6 +66,16 @@ a {
     color: black;
 }
 
+#back-btn {
+    display: flex;
+    color: blue;
+    text-transform: uppercase;
+    font-family: 'ZTTalk-Bold', sans-serif;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    width: 80px;
+}
+
 /* nav styles */
 
 .hamburger {
