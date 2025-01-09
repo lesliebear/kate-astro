@@ -10,7 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <p class="description">
             I am a New York based director, producer and editor who works with major
             networks, moderately famous comedians and independent musicians. I
-            volunteer in ways you could call <a href="https://gothamist.com/news/after-city-relocates-covid-vaccine-hub-bushwick-neighbors-step-ease-confusion" target="_blank"><b><em>community organizing</em></b></a>. You can pay me to
+            volunteer in ways you could call <a href="https://gothamist.com/news/after-city-relocates-covid-vaccine-hub-bushwick-neighbors-step-ease-confusion" target="_blank" class="semibold">community organizing</a>. You can pay me to
             make videos, consult on post or live tech, develop #relatable #content,
             staff up your production, or not pay me to run advocacy trainings, pet
             your horse, do mindless crafts, fall into deep internet holes.
@@ -39,6 +39,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .description {
        width: 50%;
+    }
+
+    .semibold {
+        font-family: 'ZTTalk-SemiBoldItalic', sans-serif;
     }
 
     @media only screen and (max-width: 768px) {

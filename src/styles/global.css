@@ -1,6 +1,30 @@
+@font-face {
+    font-family: 'ZTTalk-Regular';
+    src: url('/fonts/ZTTalk-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZTTalk-Bold';
+    src: url('/fonts/ZTTalk-Bold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZTTalk-SemiBold';
+    src: url('/fonts/ZTTalk-SemiBold.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ZTTalk-SemiBoldItalic';
+    src: url('/fonts/ZTTalk-SemiBoldItalic.woff') format('woff');
+    font-display: swap;
+}
+
 html {
     background-color: #f1f5f9;
-    font-family: sans-serif;
+    font-family: 'ZTTalk-Regular', sans-serif;
 }
 
 html.dark {
@@ -28,6 +52,7 @@ body {
 h1 {
     margin: 1rem 0;
     font-size: 1.5rem;
+    font-family: 'ZTTalk-Bold', sans-serif;
 }
 
 a {
@@ -82,9 +107,10 @@ nav {
     color: black;
     border-bottom: 1px solid gray;
     transition: background-color .15s ease-in-out;
+    font-family: 'ZTTalk-SemiBold', sans-serif;
 }
 
-.nav-links a:hover{
+.nav-links a:hover {
     background-color: #6BFFF6;
 }
 
@@ -95,7 +121,8 @@ nav {
 
 @media screen and (min-width: 769px) {
     h1 {
-        font-size: 2rem;;
+        font-size: 2rem;
+        ;
     }
 
     nav {
@@ -118,5 +145,12 @@ nav {
 
     .hamburger {
         display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    nav {
+        padding: 0;
+        ;
     }
 }
