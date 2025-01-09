@@ -5,6 +5,12 @@
 }
 
 @font-face {
+    font-family: 'ZTTalk-Medium';
+    src: url('/fonts/ZTTalk-Medium.woff') format('woff');
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'ZTTalk-Bold';
     src: url('/fonts/ZTTalk-Bold.woff') format('woff');
     font-display: swap;
@@ -24,7 +30,7 @@
 
 html {
     background-color: #f1f5f9;
-    font-family: 'ZTTalk-Regular', sans-serif;
+    font-family: 'ZTTalk-Medium', sans-serif;
 }
 
 html.dark {

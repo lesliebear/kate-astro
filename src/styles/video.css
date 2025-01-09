@@ -17,7 +17,7 @@ img {
 
 .caption {
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .video {
@@ -28,12 +28,8 @@ img {
 }
 
 .title {
-    font-family: 'ZZTalk-Bold', sans-serif;
-}
-
-.video .title {
-    font-size: 1rem;
-    /* margin-bottom: .5rem; */
+    font-size: 1.2rem;
+    font-family: 'ZTTalk-SemiBold', sans-serif;
 }
 
 .video .role {
