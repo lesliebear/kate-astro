@@ -1,36 +1,68 @@
 @font-face {
-    font-family: 'ZTTalk-Regular';
-    src: url('/fonts/ZTTalk-Regular.woff') format('woff');
+    font-family: 'zt-regular';
+    src: url('/fonts/ZTTalk-Regular.woff2') format('woff');
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'ZTTalk-Medium';
-    src: url('/fonts/ZTTalk-Medium.woff') format('woff');
+    font-family: 'zt-medium';
+    src: url('/fonts/ZTTalk-Medium.woff2') format('woff');
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'ZTTalk-Bold';
-    src: url('/fonts/ZTTalk-Bold.woff') format('woff');
+    font-family: 'zt-bold';
+    src: url('/fonts/ZTTalk-Bold.woff2') format('woff');
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'ZTTalk-SemiBold';
-    src: url('/fonts/ZTTalk-SemiBold.woff') format('woff');
+    font-family: 'zt-semibold';
+    src: url('/fonts/ZTTalk-SemiBold.woff2') format('woff');
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'ZTTalk-SemiBoldItalic';
-    src: url('/fonts/ZTTalk-SemiBoldItalic.woff') format('woff');
+    font-family: 'zt-semibolditalic';
+    src: url('/fonts/ZTTalk-SemiBoldItalic.woff2') format('woff');
+    font-display: swap;
+}
+
+/* HEAVY */
+@font-face {
+    font-family: 'zt-heavy';
+    src: url('/fonts/ZTTalk-Heavy.woff2') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'zt-heavy-condensed';
+    src: url('/fonts/ZTTalk-HeavyCondensed.woff2') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'zt-heavy-expanded';
+    src: url('/fonts/ZTTalk-HeavyExpanded.woff2') format('woff');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'zt-heavy-semiexp';
+    src: url('/fonts/ZTTalk-HeavySemiExpanded.woff2') format('woff');
+    /* font-display: swap; */
+}
+
+/* EXTRA BOLD */
+@font-face {
+    font-family: 'zt-extbd-semiexp';
+    src: url('/fonts/ZTTalk-ExtraBoldSemiExpanded.woff2') format('woff');
     font-display: swap;
 }
 
 html {
     background-color: #f1f5f9;
-    font-family: 'ZTTalk-Medium', sans-serif;
+    font-family: 'zt-medium', sans-serif;
 }
 
 html.dark {
@@ -55,10 +87,10 @@ body {
     margin: 0;
 }
 
-h1 {
+.brand-header div {
     margin: 1rem 0;
-    font-size: 1.8rem;
-    font-family: 'ZTTalk-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-family: 'zt-heavy-semiexp', sans-serif;
 }
 
 a {
@@ -68,12 +100,18 @@ a {
 
 #back-btn {
     display: flex;
+    align-items: center;
     color: blue;
     text-transform: uppercase;
-    font-family: 'ZTTalk-Bold', sans-serif;
+    font-family: 'zt-bold', sans-serif;
     margin-top: -1rem;
     margin-bottom: 2rem;
     width: 80px;
+}
+
+#back-btn span {
+    margin-left: 5px;
+    font-size: 1rem;
 }
 
 /* nav styles */
@@ -123,7 +161,7 @@ nav {
     color: black;
     border-bottom: 1px solid gray;
     transition: background-color .15s ease-in-out;
-    font-family: 'ZTTalk-SemiBold', sans-serif;
+    font-family: 'zt-bold', sans-serif;
 }
 
 .nav-links a:hover {
@@ -136,11 +174,6 @@ nav {
 }
 
 @media screen and (min-width: 769px) {
-    h1 {
-        font-size: 2rem;
-        ;
-    }
-
     nav {
         flex-flow: row nowrap;
         padding: 0;
@@ -168,5 +201,9 @@ nav {
     nav {
         padding: 0;
         ;
+    }
+
+    .brand-header div {
+        font-size: 2rem;
     }
 }

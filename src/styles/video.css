@@ -29,7 +29,7 @@ img {
 
 .title {
     font-size: 1.2rem;
-    font-family: 'ZTTalk-SemiBold', sans-serif;
+    font-family: 'zt-semibold', sans-serif;
 }
 
 .video .role {
@@ -48,5 +48,11 @@ img {
     .thumbnail {
         width: 33.333333%;
         padding: 0.5rem 0.2rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .role {
+        margin: 0
     }
 }

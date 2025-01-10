@@ -14,6 +14,7 @@ export default function BackButton() {
     }, []);
 
     return (
-        <a href="" id="back-btn">⬅ Back </a>
+        <a href="" id="back-btn"><i class="fa-solid fa-arrow-left fa-lg"></i> <span>BACK</span></a>
+        
     )
 }

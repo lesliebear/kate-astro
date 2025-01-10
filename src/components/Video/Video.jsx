@@ -65,7 +65,7 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
 
     return (
         <div class="video-container">
-            <BackButton />
+            {/* <BackButton /> */}
             {isList && (
                 <>
                     <p class="title">{title}</p>
