@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
 import "../styles/global.css";
 import { ViewTransitions } from 'astro:transitions';
 
@@ -19,5 +20,6 @@ const {isMinNav} = Astro.props;
 	<body>
 		<Header isMinNav={isMinNav}/>
         <slot />
+        <Footer />
 	</body>
 </html>

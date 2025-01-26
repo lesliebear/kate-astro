@@ -1,8 +1,9 @@
 import '../../styles/video.css';
-import BackButton from '../BackButton';
+import PressLink from './PressLink';
+// import BackButton from '../BackButton';
 import { useEffect } from "preact/hooks";
 
-export default function Video({ vidIDs, vidID, title, role="Director", isList = false }) {
+export default function Video({ vidIDs, vidID, title, role = "Director", isList = false, hasRental, press }) {
     const initPlayer = () => {
         //_____GET YOUTUBE PLAYER_______
         var tag = document.createElement('script');
@@ -24,6 +25,14 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
         setVideoPlayerHeight();
     }
 
+    const getLinks = (pressList) => {
+        return pressList.map((press) => {
+            return (
+                <PressLink pub={press.pub} link={press.link} />
+            )
+        });
+    }
+
     const renderVideos = () => {
         if (isList) {
             return vidIDs.map((vid) => {
@@ -32,7 +41,7 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
                         <div class="video-wrapper">
                             <iframe id="player" class="player" src={`https://www.youtube.com/embed/${vid.vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
                         </div>
-                        <p class="role">Role: {vid.role ? vid.role : "Director"}</p>
+                        <p class="role">{vid.role ? vid.role : "Director"}</p>
                     </div>
                 )
             });
@@ -43,7 +52,7 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
                     <div class="video-wrapper">
                         <iframe id="player" class="player" src={`https://www.youtube.com/embed/${vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
                     </div>
-                    <p class="role">Role: {role}</p>
+                    <p class="role">{role}</p>
                 </div>
             )
         }
@@ -72,6 +81,17 @@ export default function Video({ vidIDs, vidID, title, role="Director", isList = 
                 </>
             )}
             {renderVideos()}
+            {press && (
+                <div class="press-container">
+                    {hasRental && (
+                        <p class="rent-label">
+                            <a href={hasRental} target="_blank">RENT HERE</a>
+                        </p>
+                    )}
+                    <p class="press-label">Press:</p>
+                    {getLinks(press)}
+                </div>
+            )}
         </div>
     );
 }

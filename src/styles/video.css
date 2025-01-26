@@ -1,7 +1,7 @@
 .video-container {
     width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 8rem auto;
 }
 
 .thumbnail {
@@ -32,16 +32,33 @@ img {
     font-family: 'zt-semibold', sans-serif;
 }
 
-.video .role {
+.video .role, .press-label {
     font-size: 1.1rem;
 }
 
-.title, .role {
+.title, .role, .rent-label {
     margin: .5rem 0;
 }
 
 .video-wrapper, .player{
 	width: 100%;
+}
+
+.press-link, .rent-label {
+    width: 100%;
+}
+
+.press-link a, .rent-label a {
+    color: blue;
+    display: contents;
+}
+
+.press-link a:hover, .rent-label a:hover {
+    font-family: "zt-semibold", sans-serif;
+}
+
+.press-container {
+    margin-top: -4%;
 }
 
 @media screen and (min-width: 769px) {
