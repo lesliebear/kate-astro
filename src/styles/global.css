@@ -154,8 +154,24 @@ nav {
     font-family: 'zt-bold', sans-serif;
 }
 
-.nav-links a:hover {
+#film-tv-link:hover {
+    background-color: #DCFF4E;
+}
+
+#music-videos-link:hover {
     background-color: #6BFFF6;
+}
+
+#radio-link:hover {
+    background-color: #ffc61a;
+}
+
+#photos-link:hover {
+    background-color: #B1FF4E;
+}
+
+#about-link:hover {
+    background-color: #DCFF4E;
 }
 
 .expanded {
