@@ -13,17 +13,17 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
 
-    const setVideoPlayerHeight = () => {
-        const players = document.getElementsByClassName('player');
-        const video = document.getElementsByClassName('video')[0];
-        for (let i = 0; i < players.length; i++) {
-            players[i].style.height = ((video.offsetWidth * 9) / 16) + 'px';
-        }
-    }
+    // const setVideoPlayerHeight = () => {
+    //     const players = document.getElementsByClassName('player');
+    //     const video = document.getElementsByClassName('video')[0];
+    //     for (let i = 0; i < players.length; i++) {
+    //         players[i].style.height = ((video.offsetWidth * 9) / 16) + 'px';
+    //     }
+    // }
 
-    const handleResize = () => {
-        setVideoPlayerHeight();
-    }
+    // const handleResize = () => {
+    //     setVideoPlayerHeight();
+    // }
 
     const getLinks = (pressList) => {
         return pressList.map((press) => {
@@ -38,8 +38,8 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
             return vidIDs.map((vid) => {
                 return (
                     <div class="video">
-                        <div class="video-wrapper">
-                            <iframe id="player" class="player" src={`https://www.youtube.com/embed/${vid.vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
+                        <div class="video-wrapper" width={1168} height={657}>
+                            <iframe id="player" class="player" width={1168} height={657} src={`https://www.youtube.com/embed/${vid.vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
                         </div>
                         <p class="role">{vid.role ? vid.role : "Director"}</p>
                     </div>
@@ -49,8 +49,8 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
             return (
                 <div class="video">
                     <p class="title">{title}</p>
-                    <div class="video-wrapper">
-                        <iframe id="player" class="player" src={`https://www.youtube.com/embed/${vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
+                    <div class="video-wrapper" width={1168} height={657}>
+                        <iframe id="player" class="player" width={1168} height={657} src={`https://www.youtube.com/embed/${vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
                     </div>
                     <p class="role">{role}</p>
                 </div>
@@ -60,17 +60,17 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
 
     useEffect(() => {
         initPlayer();
-        setVideoPlayerHeight();
+        // setVideoPlayerHeight();
     }, []);
 
-    useEffect(() => {
-        handleResize();
-        window.addEventListener('resize', handleResize);
+    // useEffect(() => {
+    //     handleResize();
+    //     window.addEventListener('resize', handleResize);
 
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize);
+    //     };
+    // }, []);
 
     return (
         <div class="video-container">

@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout isMinNav={false}>
     <div class="photo-container">
-        <img src="/about-photo.jpeg" />
+        <img src="/about-photo.jpeg" width={467} height={310} />
     </div>
     <div class="about-container">
         <p class="description">
@@ -27,6 +27,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .photo-container img {
         width: 100%;
+        height: auto;
     }
 
     .about-container {
@@ -49,6 +50,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         .photo-container {
             width: 80%;
             margin: auto;
+            max-width: 467px;
+            height: auto;
         }
 
         .about-container {
@@ -56,6 +59,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             display: block;
             margin: auto;
             line-height: 2rem;
+            max-width: 467px;
+            height: auto;
         }
 
         .description {

@@ -2,10 +2,12 @@
     width: 100%;
     display: block;
     margin: 0 auto 8rem auto;
+    text-align: center;
 }
 
 .thumbnail {
     width: 100%;
+    max-width: 382px;
     height: auto;
     padding: 0.5rem 0;
     display: inline-block;
@@ -13,6 +15,7 @@
 
 img {
     width: 100%;
+    height: auto;
 }
 
 .caption {
@@ -32,28 +35,37 @@ img {
     font-family: 'zt-semibold', sans-serif;
 }
 
-.video .role, .press-label {
+.video .role,
+.press-label {
     font-size: 1.1rem;
 }
 
-.title, .role, .rent-label {
+.title,
+.role,
+.rent-label {
     margin: .5rem 0;
 }
 
-.video-wrapper, .player{
-	width: 100%;
+.video-wrapper,
+.player {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
 }
 
-.press-link, .rent-label {
+.press-link,
+.rent-label {
     width: 100%;
 }
 
-.press-link a, .rent-label a {
+.press-link a,
+.rent-label a {
     color: blue;
     display: contents;
 }
 
-.press-link a:hover, .rent-label a:hover {
+.press-link a:hover,
+.rent-label a:hover {
     font-family: "zt-semibold", sans-serif;
 }
 
@@ -62,6 +74,10 @@ img {
 }
 
 @media screen and (min-width: 769px) {
+    .video-container {
+        text-align: unset;
+    }
+
     .thumbnail {
         width: 33.333333%;
         padding: 0.5rem 0.2rem;
