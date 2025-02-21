@@ -3,8 +3,34 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Video from "../../components/Video/Video";
 
 export async function getStaticPaths() {
-    let data = await fetch("http://localhost:3000/api/media?limit=500");
-    let videos = await data.json();
+    let videos;
+
+    if (import.meta.env.SSR) {
+        // Mock data for build process
+        videos = {
+            docs: [
+                {
+                    title: "Mock Video 1",
+                    videoList: ["1", "2"],
+                    vidID: "1",
+                    role: "Director",
+                    rentalLink: false,
+                    press: "Some press info",
+                },
+                {
+                    title: "Mock Video 2",
+                    videoList: ["3", "4"],
+                    vidID: "2",
+                    role: "Producer",
+                    rentalLink: true,
+                    press: "Some other press info",
+                },
+            ],
+        };
+    } else {
+        let data = await fetch("http://localhost:3000/api/media?limit=500");
+        videos = await data.json();
+    }
 
     return videos.docs.map((post) => {
         return {
