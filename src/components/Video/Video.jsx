@@ -3,7 +3,8 @@ import PressLink from './PressLink';
 // import BackButton from '../BackButton';
 import { useEffect } from "preact/hooks";
 
-export default function Video({ vidIDs, vidID, title, role = "Director", isList = false, hasRental, press }) {
+export default function Video({ vidIDs, vidID, title, role = "Director", hasRental, press }) {
+    const isList = vidIDs.length > 0;
     const initPlayer = () => {
         //_____GET YOUTUBE PLAYER_______
         var tag = document.createElement('script');
@@ -13,22 +14,10 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
 
-    // const setVideoPlayerHeight = () => {
-    //     const players = document.getElementsByClassName('player');
-    //     const video = document.getElementsByClassName('video')[0];
-    //     for (let i = 0; i < players.length; i++) {
-    //         players[i].style.height = ((video.offsetWidth * 9) / 16) + 'px';
-    //     }
-    // }
-
-    // const handleResize = () => {
-    //     setVideoPlayerHeight();
-    // }
-
     const getLinks = (pressList) => {
         return pressList.map((press) => {
             return (
-                <PressLink pub={press.pub} link={press.link} />
+                <PressLink pub={press.pressItem.pub} link={press.pressItem.link} />
             )
         });
     }
@@ -39,7 +28,7 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
                 return (
                     <div class="video">
                         <div class="video-wrapper" width={1168} height={657}>
-                            <iframe id="player" class="player" width={1168} height={657} src={`https://www.youtube.com/embed/${vid.vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
+                            <iframe id="player" class="player" width={1168} height={657} src={`https://www.youtube.com/embed/${vid.video.vidID}?enablejsapi=1&showinfo=0&origin=http://katesweeney.town`} frameborder="0" allowfullscreen></iframe>
                         </div>
                         <p class="role">{vid.role ? vid.role : "Director"}</p>
                     </div>
@@ -60,17 +49,7 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
 
     useEffect(() => {
         initPlayer();
-        // setVideoPlayerHeight();
     }, []);
-
-    // useEffect(() => {
-    //     handleResize();
-    //     window.addEventListener('resize', handleResize);
-
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize);
-    //     };
-    // }, []);
 
     return (
         <div class="video-container">
@@ -81,7 +60,7 @@ export default function Video({ vidIDs, vidID, title, role = "Director", isList 
                 </>
             )}
             {renderVideos()}
-            {press && (
+            {press.length > 0 && (
                 <div class="press-container">
                     {hasRental && (
                         <p class="rent-label">
