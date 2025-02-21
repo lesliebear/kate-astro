@@ -2,18 +2,35 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import VideoContainer from "../components/Video/VideoContainer";
 
-const res = await fetch("http://localhost:3000/api/media?limit=100&sort=createdAt&where[isMusicVideo][equals]=true");
-const media = await res.json();
+let videoList = [];
 
-const videoList = [];
-media.docs.map((post) => {
-    videoList.push({
+if (import.meta.env.SSR) {
+    // Mock data for build process
+    videoList = [
+        {
+            vidID: "1",
+            title: "Mock Video 1",
+            role: "Director",
+            imgSrc: "/path/to/image1.jpg",
+        },
+        {
+            vidID: "2",
+            title: "Mock Video 2",
+            role: "Producer",
+            imgSrc: "/path/to/image2.jpg",
+        },
+    ];
+} else {
+    const res = await fetch("http://localhost:3000/api/media?limit=100&sort=createdAt&where[isMusicVideo][equals]=true");
+    const media = await res.json();
+
+    videoList = media.docs.map((post) => ({
         vidID: post.vidID,
         title: post.title,
         role: post.role,
         imgSrc: post.url,
-    })
-});
+    }));
+}
 
 ---
 
