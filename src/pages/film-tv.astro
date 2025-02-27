@@ -1,40 +1,48 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import VideoContainer from "../components/Video/VideoContainer";
+import VideoContainer from "../components/Video/VideoContainer"
 
-let videoList = [];
-
-if (import.meta.env.SSR) {
-    // Mock data for build process
-    videoList = [
+const videoList = [
         {
-            vidID: "1",
-            title: "Mock Video 1",
-            role: "Director",
-            imgSrc: "/mock-image.jpeg",
+            title: 'Screaming Females Do Alaska',
+            imgSrc: 'SFALASKA.png'
         },
         {
-            vidID: "2",
-            title: "Mock Video 2",
-            role: "Producer",
-            imgSrc: "/mock-image.jpeg",
+            title: 'CHRIS GETHARD HALF MY LIFE',
+            imgSrc: "ChrisGethard_HalfMyLife.jpg",
         },
+        {
+            title: 'CHRIS GETHARD PRESENTS',
+            imgSrc: 'CGP_TEXT.png'
+        },
+        {
+            title: 'THE CHRIS GETHARD SHOW',
+            imgSrc: 'TCGS_TEXT.jpg'
+        },
+        {
+            title: 'MTV',
+            imgSrc: 'MTV_IN_GENERAL.png'
+        },
+        {
+            title: 'MTV12',
+            imgSrc: 'MTV12.png'
+        },
+        {
+            title: 'BANANAZZZ',
+            imgSrc: 'BANANAZZZ.png'
+        },
+        {
+            title: 'THE SPECIAL',
+            imgSrc: 'THESPECIAL.jpg'
+        },
+        {
+            title: 'Kiki Haus of Us - Gamification Ball',
+            imgSrc: 'KIKI_TEXT.png'
+        }
     ];
-} else {
-    const res = await fetch(
-        "http://localhost:3000/api/media?limit=100&sort=createdAt&where[isMusicVideo][equals]=false",
-    );
-    const media = await res.json();
-
-    videoList = media.docs.map((post) => ({
-        vidID: post.vidID,
-        title: post.title,
-        role: post.role,
-        imgSrc: post.url,
-    }));
-}
 ---
 
 <BaseLayout isMinNav={false}>
-    <VideoContainer videoList={videoList} showTitle={false} />
+    <VideoContainer videoList={videoList} imgPath="/thumbnails/" showTitle={false}
+    />
 </BaseLayout>
