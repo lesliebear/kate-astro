@@ -70,12 +70,16 @@ img {
 }
 
 .press-container {
-    margin-top: -4%;
+    text-align: left;
 }
 
 @media screen and (min-width: 769px) {
     .video-container {
         text-align: unset;
+    }
+
+    .press-container {
+        margin-top: -4%;
     }
 
     .thumbnail {
