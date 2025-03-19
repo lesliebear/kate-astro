@@ -1,5 +1,3 @@
-
-
 export default function Player({src, width="100%", height="166"}) {
     return (
         <iframe
